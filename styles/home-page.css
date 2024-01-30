@@ -1,0 +1,119 @@
+body{
+    background: #625be3;
+}
+main{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    transition: width .5s ease,height .5s ease;
+    color: #93979e; 
+}
+.content-main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+.information-page{
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+    margin-bottom: 40px;
+}
+.information-page img.avatar{
+    position: relative;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    transition: .4s ease-in-out;
+}
+.information-page h1{
+    margin: 15px 15px 0;
+    color: white;
+    font-size: 2rem;
+    line-height: 1.2em;
+    font-weight: 300;
+}
+.information-page h2{
+    color: white;
+    letter-spacing: 3px;
+    font-size: .8rem;
+    font-weight: lighter;
+}
+.content-page{
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+    padding-bottom: 35px;
+}
+#Books-page{
+    width: 100%;
+}
+.Books-link{
+    text-decoration: none;
+}
+.Books-coin{
+    width: 40px;
+    height: 40px;
+}
+.Books{
+    font-size: 16px;
+    border: unset !important;
+    color: white;
+}
+
+#Movies-page{
+    width: 100%;
+}
+.Movies-link{
+    text-decoration: none;
+}
+.Movies-coin{
+    width: 40px;
+    height: 40px;
+}
+.Movies{
+    font-size: 16px;
+    color: white;
+}
+
+#Games-page{
+    width: 100%;
+}
+.Games-link{
+    text-decoration: none;
+}
+.Games-coin{
+    width: 40px;
+    height: 40px;
+}
+.Games{
+    font-size: 16px;
+    color: white;
+}
+
+#Sports-page{
+    width: 100%;
+}
+.Sports-link{
+    text-decoration: none;
+}
+.Sports-coin{
+    width: 40px;
+    height: 40px;
+}
+.Sports{
+    font-size: 16px;
+    color: white;
+}
