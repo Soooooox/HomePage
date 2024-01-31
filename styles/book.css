@@ -35,6 +35,9 @@
     text-transform: uppercase;
   }
   
+  .topnav .manga-now{
+    color: #e3999e;
+  }
   .topnav .search-container {
     float: right;
     margin-right: 15px;
