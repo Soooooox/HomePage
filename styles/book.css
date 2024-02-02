@@ -188,6 +188,10 @@ img {
   align-items: center;
 }
 
+.now-nav i,
+.now-nav span{
+  color: #e94385;
+}
 .nav-link span{
   font-family: var(--body-font);
 }
@@ -440,7 +444,7 @@ img {
   }
 
   .column{
-    padding: 1rem 3rem;
+    padding: 1rem 1rem;
   }
 
   .book-card{
