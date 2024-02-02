@@ -215,6 +215,8 @@ img {
   color: var(--title-color);
   cursor: pointer;
   transition: color .4s;
+    /* 以下可以删除 */
+    margin-inline: 0.5rem;
 }
 
 .nav-actions i:hover{

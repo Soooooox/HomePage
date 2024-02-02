@@ -214,6 +214,12 @@ fetch('../../db/book/manga.json')
     });
   })
 
+const homebutton = document.getElementById('home-button');
+
+homebutton.addEventListener(
+  'click', () =>{
+    window.location.href = "../../index.html"
+  })
 /*=============== HOME SWIPER ===============*/
 // let swiperdetail = new Swiper('.detail-swiper', {
 // 	loop: true,

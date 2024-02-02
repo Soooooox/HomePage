@@ -87,14 +87,14 @@ fetch('../../db/game/game.json')
 
         const div_row = document.createElement('div');
         div_row.setAttribute('class', 'row');
-		div_row.setAttribute('id', 'row');
+		    div_row.setAttribute('id', 'row');
 
         const div_column = document.createElement('div');
         div_column.setAttribute('class', 'column');
 
         const div_card = document.createElement('div');
         div_card.setAttribute('class', 'game-card');
-		div_card.setAttribute('id', 'game-card');
+		    div_card.setAttribute('id', 'game-card');
 
         const center = document.createElement('center');
 
@@ -162,4 +162,12 @@ fetch('../../db/game/game.json')
 		}
 	 
     });
+  })
+
+
+const homebutton = document.getElementById('home-button');
+
+homebutton.addEventListener(
+  'click', () =>{
+    window.location.href = "../../index.html"
   })

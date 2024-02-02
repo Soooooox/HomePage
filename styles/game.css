@@ -166,7 +166,7 @@ img {
   cursor: pointer;
   transition: color .4s;
   /* 以下可以删除 */
-  margin-inline: 0.2rem;
+  margin-inline: 0.5rem;
 }
 
 .nav-actions i:hover{
@@ -360,13 +360,6 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width:320px){
-  .nav-menu{
-    padding-inline: 1rem;
-  }
-
-  .nav-link span{
-    font-size: 12px;
-  }
   .row{
     width: 100%;
   }
@@ -383,14 +376,6 @@ img {
 }
 
 @media screen and (max-width:500px){
-  .nav-menu{
-    padding-inline: 2rem;
-  }
-
-  .nav-link span{
-    font-size: 12px;
-  }
-
   .row{
     width: 100%;
   }
@@ -412,14 +397,6 @@ img {
 }
 /* For medium devices */
 @media screen and (min-width:576px){
-  .nav-menu{
-    padding-inline: 4rem;
-  }
-
-  .nav-link span{
-    font-size: 16px;
-  }
-
   .row{
     width: 50%;
   }
@@ -436,14 +413,6 @@ img {
   }
 }
 @media screen and (min-width:768px){
-  .nav-menu{
-    padding-inline: 8rem;
-  }
-
-  .nav-link span{
-    font-size: 16px;
-  }
-
   .row{
     width: 33.333%;
   }
@@ -461,29 +430,6 @@ img {
 }
 /* For large devices */
 @media screen and (min-width:1150px){
-  .nav-link i{
-    display: none;
-  }
-
-  .nav-link span{
-    font-size: 1.25rem;
-    display: block;
-  }
-
-  .nav-link{
-    font-weight: var(--font-medium);
-  }
-
-  .nav-menu{
-    width: initial;
-    margin-inline: auto;
-    padding-inline: 1rem;
-  }
-
-  .nav-list{
-    column-gap: 4rem;
-  }
-
   .row{
     width: 33.333%;
   }
@@ -500,29 +446,6 @@ img {
   }
 }
 @media screen and (min-width:1500px){
-  .nav-link i{
-    display: none;
-  }
-
-  .nav-link span{
-    font-size: 1.25rem;
-    display: block;
-  }
-
-  .nav-link{
-    font-weight: var(--font-medium);
-  }
-
-  .nav-menu{
-    width: initial;
-    margin-inline: auto;
-    padding-inline: 1rem;
-  }
-
-  .nav-list{
-    column-gap: 4rem;
-  }
-
   .row{
     width: 25%;
   }
@@ -539,29 +462,6 @@ img {
   }
 }
 @media screen and (min-width:1920px){
-  .nav-link i{
-    display: none;
-  }
-
-  .nav-link span{
-    font-size: 1.25rem;
-    display: block;
-  }
-
-  .nav-link{
-    font-weight: var(--font-medium);
-  }
-
-  .nav-menu{
-    width: initial;
-    margin-inline: auto;
-    padding-inline: 1rem;
-  }
-
-  .nav-list{
-    column-gap: 4rem;
-  }
-
   .row{
     width: 20%;
   }
