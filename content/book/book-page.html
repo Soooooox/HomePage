@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <link href="../../styles/book.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+  <link href="../../styles/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../../styles/book.css" rel="stylesheet">
   <title>Book</title>
 </head>
 
@@ -78,94 +79,59 @@
 <main class="main">
   <!--==================== HOME ====================-->
   <section class="book section" id="book">
-      <h2 class="section-title active-link">
-        阅读中 
+      <h2 class="section-title active-link" id="section-title">
+        Reading... 
       </h2>
 
-      <div class="book-container container">
-        <div class="row">
+      <div class="book-container container" id="book-container">
+        <!-- <div class="row">
           <div class="column">
             <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
+              <center><img src="/content/book/cover/累1.jpg" alt="img" id="img" class="book-img"></center>
               <h2 class="book-title">累</h2>
             </div>
           </div>
-        </div>
+        </div> -->
+      </div>
 
-        <div class="row">
-          <div class="column">
-            <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
-              <h2 class="book-title">累</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="column">
-            <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
-              <h2 class="book-title">累</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="column">
-            <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
-              <h2 class="book-title">累</h2>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="column">
-            <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
-              <h2 class="book-title">累</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="column">
-            <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
-              <h2 class="book-title">累</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="column">
-            <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
-              <h2 class="book-title">累</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="column">
-            <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
-              <h2 class="book-title">累</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="column">
-            <div class="book-card">
-              <center><img src="/content/book/cover/累1.jpg" alt="img" id="image" class="book-img"></center>
-              <h2 class="book-title">累</h2>
-            </div>
+  </section>
+</main>
+  <!--==================== DETAIL ====================-->
+  <div class="book-detail" id="book-detail">
+    <div class="detail-container container grid">
+      <div class="detail-images">
+        <div class="detail-swiper swiper">
+          <div class="swiper-wrapper" id="book-swiper">
+            <!-- <article class="book-article swiper-slide">
+              <img src="../book/cover/累1.jpg" alt="img" class="detail-img">
+            </article>
+  
+            <article class="book-article swiper-slide">
+              <img src="../book/cover/累2.jpg" alt="img" class="detail-img">
+            </article>
+  
+            <article class="book-article swiper-slide">
+              <img src="../book/cover/累3.jpg" alt="img" class="detail-img">
+            </article> -->
           </div>
         </div>
       </div>
-  </section>
-</main>
+    </div>
+    <div class="info" id="info">
+      <!-- <h2 class="title">累</h2>
+      <div class="total-vol">总共卷数: 14</div>
+      <div class="reading-vol">已读卷数: 0</div>
+      <div class="published_year">出版年代: 2013</div>
+      <div class="serial_status">连载状态: 完结</div>
+      <div class="classification">分类: 单行本原作漫画</div>
+      <div class="type">类型: 霸凌</div>
+      <div class="author">作者: 松浦だるま</div>
+      <div class="reading_status">阅读状态: 阅读中</div>
+      <div class="evaluate">作品评价: 好作品</div>
+      <div class="comment">作品评论: 正在观看中</div> -->
+    </div>
+    <i class="ri-close-line detail-close" id="detail-close"></i>
+  </div>
 
 <!--========== SCROLL UP ==========-->
 <a href="#" class="scrollup" id="scroll-up">
@@ -175,10 +141,10 @@
 
 
   <!--=============== SCROLLREVEAL ===============-->
-  <script src=""></script>
+  <script src="../../scripts/scrollreveal.min.js"></script>
 
   <!--=============== SWIPER JS ===============-->
-  <script src=""></script>
+  <script src="../../scripts/swiper-bundle.min.js"></script>
 
   <!--=============== MAIN JS ===============-->
   <script src="../../scripts/book/book-page.js"></script>

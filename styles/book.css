@@ -72,7 +72,6 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   transition: background-color .4s;
-  position: relative;
 }
   
 input,
@@ -308,7 +307,7 @@ img {
 }
 
 .book-img{
-  width: 220px;
+  width: 100%;
   transition: scale .4s;
   box-shadow: -0.2rem 0.2rem 0.5rem 0.1rem hsla(0, 0%, 0%, 0.267);
 }
@@ -317,6 +316,62 @@ img {
   font-size: var(--h2-font-size);
   margin-top: 1rem;
   font-family: var(--body-font);
+}
+
+/*=============== DETAIL ===============*/
+.book-detail{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: var(--body-color);
+  backdrop-filter: blur(16px);
+  /* padding: 8rem 1.5rem; */
+  transition: left .4s;
+}
+
+.detail-container{
+  row-gap: 2.5rem;
+  padding-top: 4.5rem;
+}
+
+.detail-images{
+  display: grid;
+}
+
+.detail-swiper{
+  margin: initial;
+}
+
+.detail-article,
+.detail-img{
+  width: 220px;
+  transition: scale .4s;
+}
+
+.detail-article{
+  scale: .8;
+}
+
+.detail-close{
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+/* Swiper class */
+.swiper-slide-active,
+.swiper-slide-duplicate-active{
+  scale: 1;
+}
+/* Show search */
+.show-detail{
+  left: 0;
 }
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar{
@@ -373,9 +428,6 @@ img {
     padding: 2rem 2rem 0.2rem;
     width: 100%;
   }
-  .book-img{
-    width: 200px;
-  }
   
   .book-title{
     font-size: var(--h2-font-size);
@@ -392,20 +444,20 @@ img {
   .nav-link span{
     font-size: 12px;
   }
+
   .row{
     width: 100%;
   }
+
   .column{
     padding: 1rem 3rem;
   }
+
   .book-card{
     padding: 2rem 2rem 0.2rem;
     width: 100%;
   }
-  .book-img{
-    width: 200px;
-  }
-  
+
   .book-title{
     font-size: var(--h2-font-size);
     margin-bottom: .5rem;
@@ -421,17 +473,16 @@ img {
   .nav-link span{
     font-size: 16px;
   }
+
   .row{
     width: 50%;
   }
+
   .book-card{
     padding: 2rem 2rem 0.2rem;
     width: 100%;
   }
-  .book-img{
-    width: 200px;
-  }
-  
+
   .book-title{
     font-size: var(--h2-font-size);
     margin-bottom: .5rem;
@@ -446,15 +497,14 @@ img {
   .nav-link span{
     font-size: 16px;
   }
+
   .row{
     width: 33.333%;
   }
+
   .book-card{
     padding: 2rem 2rem 0.2rem;
     width: 100%;
-  }
-  .book-img{
-    width: 200px;
   }
   
   .book-title{
@@ -468,18 +518,22 @@ img {
   .nav-link i{
     display: none;
   }
+
   .nav-link span{
     font-size: 1.25rem;
     display: block;
   }
+
   .nav-link{
     font-weight: var(--font-medium);
   }
+
   .nav-menu{
     width: initial;
     margin-inline: auto;
     padding-inline: 1rem;
   }
+
   .nav-list{
     column-gap: 4rem;
   }
@@ -487,12 +541,10 @@ img {
   .row{
     width: 33.333%;
   }
+
   .book-card{
     padding: 2rem 2rem 0.2rem;
     width: 100%;
-  }
-  .book-img{
-    width: 200px;
   }
   
   .book-title{
@@ -505,18 +557,22 @@ img {
   .nav-link i{
     display: none;
   }
+
   .nav-link span{
     font-size: 1.25rem;
     display: block;
   }
+
   .nav-link{
     font-weight: var(--font-medium);
   }
+
   .nav-menu{
     width: initial;
     margin-inline: auto;
     padding-inline: 1rem;
   }
+
   .nav-list{
     column-gap: 4rem;
   }
@@ -524,14 +580,12 @@ img {
   .row{
     width: 25%;
   }
+  
   .book-card{
     padding: 2rem 2rem 0.2rem;
     width: 100%;
   }
-  .book-img{
-    width: 200px;
-  }
-  
+
   .book-title{
     font-size: var(--h2-font-size);
     margin-bottom: .5rem;
@@ -542,18 +596,22 @@ img {
   .nav-link i{
     display: none;
   }
+
   .nav-link span{
     font-size: 1.25rem;
     display: block;
   }
+
   .nav-link{
     font-weight: var(--font-medium);
   }
+
   .nav-menu{
     width: initial;
     margin-inline: auto;
     padding-inline: 1rem;
   }
+
   .nav-list{
     column-gap: 4rem;
   }
@@ -561,14 +619,12 @@ img {
   .row{
     width: 20%;
   }
+  
   .book-card{
     padding: 2rem 2rem 0.2rem;
     width: 100%;
   }
-  .book-img{
-    width: 200px;
-  }
-  
+
   .book-title{
     font-size: var(--h2-font-size);
     margin-bottom: .5rem;

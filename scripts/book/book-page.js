@@ -25,8 +25,6 @@ const shadowHeader = () =>{
 }
 window.addEventListener('scroll', shadowHeader)
 
-/*=============== HOME SWIPER ===============*/
-
 /*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () =>{
 	const scrollUp = document.getElementById('scroll-up')
@@ -61,48 +59,161 @@ window.addEventListener('scroll', scrollActive)
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+	origin: 'top',
+	distance: '40px',
+	duration: 2500,
+	delay: 400,
+	// reset: true, //Animations repeat
+})
 
-// const IMG_PATH = './cover/';
+sr.reveal('.book-container')
+sr.reveal('.book-container',{delay: 300})
 
-// const main = document.getElementById("content-box");
-// const form = document.getElementById("form");
-// const search = document.getElementById("query");
+/*=============== CREATE HTML ===============*/
+function fileExists(url) {
+	var http = new XMLHttpRequest();
+	http.open('HEAD', url, false);
+	http.send();
+	return http.status != 404;
+}
 
-// fetch('../../db/book/manga.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//     data.forEach(element => {
-//       if (element.reading_status == "阅读中") {
+const IMG_PATH = './cover/';
 
-//         const div_row = document.createElement('div');
-//         div_row.setAttribute('class', 'row');
+const container = document.getElementById("book-container");
+const detailClose = document.getElementById('detail-close')
+const detailContent = document.getElementById('book-detail')
+const info = document.getElementById('info')
+const swiper = document.getElementById('book-swiper')
 
-//         const div_column = document.createElement('div');
-//         div_column.setAttribute('class', 'column');
+fetch('../../db/book/manga.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    data.forEach(element => {
+      if (element.reading_status == "阅读中") {
 
-//         const div_card = document.createElement('div');
-//         div_card.setAttribute('class', 'card');
+        const div_row = document.createElement('div');
+        div_row.setAttribute('class', 'row');
+		div_row.setAttribute('id', 'row');
 
-//         const center = document.createElement('center');
+        const div_column = document.createElement('div');
+        div_column.setAttribute('class', 'column');
 
-//         const image = document.createElement('img');
-//         image.setAttribute('class', 'thumbnail');
-//         image.setAttribute('id', 'image');
+        const div_card = document.createElement('div');
+        div_card.setAttribute('class', 'book-card');
+		// div_card.setAttribute('id', 'book-card');
 
-//         const title = document.createElement('div');
-//         title.setAttribute('id', 'title');
+        const center = document.createElement('center');
 
-//         title.innerHTML = `${element.title}`;
-//         image.src = IMG_PATH + element.img_path;
+        const image = document.createElement('img');
+        image.setAttribute('class', 'book-img');
+        image.setAttribute('id', 'img');
 
-//         main.appendChild(div_row);
-//         div_row.appendChild(div_column);
-//         div_column.appendChild(div_card);
-//         div_card.appendChild(center);
-//         center.appendChild(image);
-//         div_card.appendChild(title);
-//       };
+        const title = document.createElement('h2');
+        title.setAttribute('class', 'book-title');
 
-//     });
-//   })
+        title.innerHTML = `${element.title}`;
+        image.src = IMG_PATH + element.img_path;
+
+        container.appendChild(div_row);
+        div_row.appendChild(div_column);
+        div_column.appendChild(div_card);
+        div_card.appendChild(center);
+        center.appendChild(image);
+        div_card.appendChild(title);
+		
+		
+
+
+
+
+		url= IMG_PATH + element.title + "1" +".jpg"
+		let exists = fileExists(url);
+
+		/* Detail show */
+		if(div_card){
+			div_card.addEventListener('click', () =>{
+				const infotitle = document.createElement('h2');
+				infotitle.setAttribute('class', 'title');
+				infotitle.innerHTML = `${element.title}`;
+		
+				const totalvol = document.createElement('div');
+				totalvol.setAttribute('class', 'total-vol');
+				totalvol.innerHTML = element.total_vol;
+		
+				info.appendChild(infotitle);
+				info.appendChild(totalvol);
+				
+				if(exists!= 404)
+				{
+					for (let i = 0; i < totalvol; i++) {
+						console.log(i);
+						const article = document.createElement('article');
+						article.setAttribute('class','book-article');
+						article.setAttribute('class','swiper-slide');
+						const images = document.createElement('img');
+						images.setAttribute('class', 'detail-img');
+						images.src = IMG_PATH + element.title + 'i+1' + ".jpg"
+						swiper.appendChild(article);
+						article.appendChild(images);
+					}
+				}
+
+
+				detailContent.classList.add('show-detail');
+
+
+
+			})
+		}
+
+		/* Detail hidden */
+		if(detailClose){
+			detailClose.addEventListener('click', () =>{
+				detailContent.classList.remove('show-detail');
+				remove()
+			})
+		}
+      };
+	 
+    });
+  })
+
+/*=============== HOME SWIPER ===============*/
+let swiperdetail = new Swiper('.detail-swiper', {
+	loop: true,
+	spaceBetween: -24,
+	grabCursor: true,
+	slidesPreview: true,
+	centeredSlides: true,
+
+	autoplay: {
+		delay: 2000,
+		disableOnInteraction: false,
+	},
+
+	breakpoints: {
+		1220: {
+			spaceBetween: -32,
+		}
+	}
+});
+/*=============== SHOW DETAIL ===============*/
+// const bookcard = document.getElementById('img'),
+//       detailClose = document.getElementById('detail-close'),
+//       detailContent = document.getElementById('book-detail')
+
+// /* Menu show */
+// if(bookcard){
+// 	bookcard.addEventListener('click', () =>{
+//         detailContent.classList.add('show-detail')
+//     })
+// }
+
+// /* Menu hidden */
+// if(detailClose){
+// 	detailClose.addEventListener('click', () =>{
+// 		detailContent.classList.remove('show-detail')
+//     })
+// }
