@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&display=swap');
 body{
-    background: #625be3;
+    background: linear-gradient(to right, #7d2381, #fb7e8a,#f7c198);
 }
 main{
     position: relative;
@@ -40,13 +41,15 @@ main{
     color: white;
     font-size: 2rem;
     line-height: 1.2em;
-    font-weight: 300;
+    font-weight: bold;
+    font-family: 'Noto Sans SC';
 }
 .information-page h2{
     color: white;
     letter-spacing: 3px;
-    font-size: .8rem;
-    font-weight: lighter;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: 'Noto Sans SC';
 }
 .content-page{
     display:flex;
@@ -57,63 +60,33 @@ main{
     border-bottom: 1px solid hsla(0,0%,100%,.1);
     padding-bottom: 35px;
 }
-#Books-page{
+.onepage{
     width: 100%;
 }
-.Books-link{
+a{
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.Books-coin{
-    width: 40px;
-    height: 40px;
-}
-.Books{
-    font-size: 16px;
-    border: unset !important;
+i{
     color: white;
+    font-size: 2rem;
 }
-
-#Movies-page{
-    width: 100%;
-}
-.Movies-link{
-    text-decoration: none;
-}
-.Movies-coin{
-    width: 40px;
-    height: 40px;
-}
-.Movies{
-    font-size: 16px;
+span{
     color: white;
+    font-size: 1rem;
 }
-
-#Games-page{
-    width: 100%;
-}
-.Games-link{
-    text-decoration: none;
-}
-.Games-coin{
-    width: 40px;
-    height: 40px;
-}
-.Games{
-    font-size: 16px;
-    color: white;
-}
-
-#Sports-page{
-    width: 100%;
-}
-.Sports-link{
-    text-decoration: none;
-}
-.Sports-coin{
-    width: 40px;
-    height: 40px;
-}
-.Sports{
-    font-size: 16px;
-    color: white;
+@media screen and (max-width:950px){
+    .content-main{
+        width: 90%;
+    }
+    i{
+        color: white;
+        font-size: 2rem;
+    }
+    span{
+        color: white;
+        font-size: 1rem;
+    }
 }
