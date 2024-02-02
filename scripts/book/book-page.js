@@ -207,6 +207,7 @@ fetch('../../db/book/manga.json')
 				info.removeChild(readingstatus);
 				info.removeChild(evaluate);
 				info.removeChild(comment);
+				detailContent.classList.remove('show-detail');
 			})
 		}
       };

@@ -158,6 +158,7 @@ fetch('../../db/game/game.json')
 				info.removeChild(publishedyear);
 				info.removeChild(type);
 				info.removeChild(comment);
+				detailContent.classList.add('show-detail');
 			})
 		}
 	 

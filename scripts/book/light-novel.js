@@ -206,6 +206,7 @@ fetch('../../db/book/lightnovel.json')
 		// 		info.removeChild(readingstatus);
 		// 		info.removeChild(evaluate);
 		// 		info.removeChild(comment);
+		// 		detailContent.classList.add('show-detail');
 		// 	})
 		// }
 
