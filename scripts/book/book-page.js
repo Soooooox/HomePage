@@ -71,25 +71,17 @@ sr.reveal('.book-container')
 sr.reveal('.book-container',{delay: 300})
 
 /*=============== CREATE HTML ===============*/
-function fileExists(url) {
-	var http = new XMLHttpRequest();
-	http.open('HEAD', url, false);
-	http.send();
-	return http.status != 404;
-}
-
 const IMG_PATH = './cover/';
 
 const container = document.getElementById("book-container");
 const detailClose = document.getElementById('detail-close')
 const detailContent = document.getElementById('book-detail')
 const info = document.getElementById('info')
-const swiper = document.getElementById('book-swiper')
 
 fetch('../../db/book/manga.json')
   .then(response => response.json())
   .then(data => {
-    console.log(data);
+    // console.log(data);
     data.forEach(element => {
       if (element.reading_status == "阅读中") {
 
@@ -102,7 +94,7 @@ fetch('../../db/book/manga.json')
 
         const div_card = document.createElement('div');
         div_card.setAttribute('class', 'book-card');
-		// div_card.setAttribute('id', 'book-card');
+		div_card.setAttribute('id', 'book-card');
 
         const center = document.createElement('center');
 
@@ -122,48 +114,80 @@ fetch('../../db/book/manga.json')
         div_card.appendChild(center);
         center.appendChild(image);
         div_card.appendChild(title);
-		
-		
 
-
-
-
-		url= IMG_PATH + element.title + "1" +".jpg"
-		let exists = fileExists(url);
 
 		/* Detail show */
+		// 信息
+		const infotitle = document.createElement('h2');
+		infotitle.setAttribute('class', 'title');
+		infotitle.innerHTML = `${element.title}`;
+		
+		const totalvol = document.createElement('div');
+		totalvol.setAttribute('class', 'total-vol');
+		totalvol.setAttribute('class', 'detail');
+		totalvol.innerHTML = "总共卷数: " + element.total_vol;
+		
+		const  readingvol= document.createElement('div');
+		readingvol.setAttribute('class', 'reading-vol');
+		readingvol.setAttribute('class', 'detail');
+		readingvol.innerHTML = "已读卷数: " + element.reading_vol;
+
+		const publishedyear = document.createElement('div');
+		publishedyear.setAttribute('class', 'published-year');
+		publishedyear.setAttribute('class', 'detail');
+		publishedyear.innerHTML = "出版年代: " + element.published_year;
+
+		const serialstatus = document.createElement('div');
+		serialstatus.setAttribute('class', 'serial-status');
+		serialstatus.setAttribute('class', 'detail');
+		serialstatus.innerHTML = "连载状态: " + `${element.serial_status}`;
+		
+		const classf = document.createElement('div');
+		classf.setAttribute('class', 'classification');
+		classf.setAttribute('class', 'detail');
+		classf.innerHTML = "分类: " + `${element.classification}`;
+		
+		const type = document.createElement('div');
+		type.setAttribute('class', 'type');
+		type.setAttribute('class', 'detail');
+		type.innerHTML = "类型: " + `${element.type}`;
+
+		const author = document.createElement('div');
+		author.setAttribute('class', 'author');
+		author.setAttribute('class', 'detail');
+		author.innerHTML = "作者: " + `${element.author}`;
+
+		const readingstatus = document.createElement('div');
+		readingstatus.setAttribute('class', 'reading-status');
+		readingstatus.setAttribute('class', 'detail');
+		readingstatus.innerHTML = "阅读状态: " + `${element.reading_status}`;
+
+		const evaluate = document.createElement('div');
+		evaluate.setAttribute('class', 'evaluate');
+		evaluate.setAttribute('class', 'detail');
+		evaluate.innerHTML = "作品评价: " + `${element.evaluate}`;
+
+		const comment = document.createElement('div');
+		comment.setAttribute('class', 'comment');
+		comment.setAttribute('class', 'detail');
+		comment.innerHTML = "作品评论: " + `${element.comment}`;
+
+
+		
 		if(div_card){
 			div_card.addEventListener('click', () =>{
-				const infotitle = document.createElement('h2');
-				infotitle.setAttribute('class', 'title');
-				infotitle.innerHTML = `${element.title}`;
-		
-				const totalvol = document.createElement('div');
-				totalvol.setAttribute('class', 'total-vol');
-				totalvol.innerHTML = element.total_vol;
-		
 				info.appendChild(infotitle);
 				info.appendChild(totalvol);
-				
-				if(exists!= 404)
-				{
-					for (let i = 0; i < totalvol; i++) {
-						console.log(i);
-						const article = document.createElement('article');
-						article.setAttribute('class','book-article');
-						article.setAttribute('class','swiper-slide');
-						const images = document.createElement('img');
-						images.setAttribute('class', 'detail-img');
-						images.src = IMG_PATH + element.title + 'i+1' + ".jpg"
-						swiper.appendChild(article);
-						article.appendChild(images);
-					}
-				}
-
-
+				info.appendChild(readingvol);
+				info.appendChild(publishedyear);
+				info.appendChild(serialstatus);
+				info.appendChild(classf);
+				info.appendChild(type);
+				info.appendChild(author);
+				info.appendChild(readingstatus);
+				info.appendChild(evaluate);
+				info.appendChild(comment);
 				detailContent.classList.add('show-detail');
-
-
 
 			})
 		}
@@ -172,7 +196,17 @@ fetch('../../db/book/manga.json')
 		if(detailClose){
 			detailClose.addEventListener('click', () =>{
 				detailContent.classList.remove('show-detail');
-				remove()
+				info.removeChild(infotitle);
+				info.removeChild(totalvol);
+				info.removeChild(readingvol);
+				info.removeChild(publishedyear);
+				info.removeChild(serialstatus);
+				info.removeChild(classf);
+				info.removeChild(type);
+				info.removeChild(author);
+				info.removeChild(readingstatus);
+				info.removeChild(evaluate);
+				info.removeChild(comment);
 			})
 		}
       };
@@ -181,39 +215,21 @@ fetch('../../db/book/manga.json')
   })
 
 /*=============== HOME SWIPER ===============*/
-let swiperdetail = new Swiper('.detail-swiper', {
-	loop: true,
-	spaceBetween: -24,
-	grabCursor: true,
-	slidesPreview: true,
-	centeredSlides: true,
+// let swiperdetail = new Swiper('.detail-swiper', {
+// 	loop: true,
+// 	spaceBetween: -24,
+// 	grabCursor: true,
+// 	slidesPreview: true,
+// 	centeredSlides: true,
 
-	autoplay: {
-		delay: 2000,
-		disableOnInteraction: false,
-	},
+// 	autoplay: {
+// 		delay: 2000,
+// 		disableOnInteraction: false,
+// 	},
 
-	breakpoints: {
-		1220: {
-			spaceBetween: -32,
-		}
-	}
-});
-/*=============== SHOW DETAIL ===============*/
-// const bookcard = document.getElementById('img'),
-//       detailClose = document.getElementById('detail-close'),
-//       detailContent = document.getElementById('book-detail')
-
-// /* Menu show */
-// if(bookcard){
-// 	bookcard.addEventListener('click', () =>{
-//         detailContent.classList.add('show-detail')
-//     })
-// }
-
-// /* Menu hidden */
-// if(detailClose){
-// 	detailClose.addEventListener('click', () =>{
-// 		detailContent.classList.remove('show-detail')
-//     })
-// }
+// 	breakpoints: {
+// 		1220: {
+// 			spaceBetween: -32,
+// 		}
+// 	}
+// });

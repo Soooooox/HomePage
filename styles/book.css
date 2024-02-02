@@ -321,8 +321,8 @@ img {
 /*=============== DETAIL ===============*/
 .book-detail{
   position: fixed;
-  top: 0;
-  left: -100%;
+  top: -100%;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 100;
@@ -330,29 +330,6 @@ img {
   backdrop-filter: blur(16px);
   /* padding: 8rem 1.5rem; */
   transition: left .4s;
-}
-
-.detail-container{
-  row-gap: 2.5rem;
-  padding-top: 4.5rem;
-}
-
-.detail-images{
-  display: grid;
-}
-
-.detail-swiper{
-  margin: initial;
-}
-
-.detail-article,
-.detail-img{
-  width: 220px;
-  transition: scale .4s;
-}
-
-.detail-article{
-  scale: .8;
 }
 
 .detail-close{
@@ -364,15 +341,28 @@ img {
   cursor: pointer;
 }
 
-/* Swiper class */
-.swiper-slide-active,
-.swiper-slide-duplicate-active{
-  scale: 1;
-}
 /* Show search */
 .show-detail{
-  left: 0;
+  top: 0;
 }
+
+/* Book Detail information */
+.info{
+  margin-top: 6rem;
+}
+.title{
+  font-size: var(--h2-font-size);
+  margin-top: 1rem;
+  font-family: var(--body-font);
+  text-align: center;
+}
+.detail{
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar{
   width: .6rem;
