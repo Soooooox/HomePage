@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&display=swap');
+
 body{
     background: linear-gradient(to right, #7d2381, #fb7e8a,#f7c198);
 }
 main{
     position: relative;
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
 
     display: flex;
@@ -13,7 +14,7 @@ main{
     align-items: center;
 
     text-align: center;
-    transition: width .5s ease,height .5s ease;
+    transition: width .3s ease,height .3s ease;
     color: #93979e; 
 }
 .content-main{
@@ -63,17 +64,17 @@ main{
 .onepage{
     width: 100%;
 }
-a{
+.page-link{
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-i{
+.page-coin{
     color: white;
     font-size: 2rem;
 }
-span{
+.page-name{
     color: white;
     font-size: 1rem;
 }
@@ -81,11 +82,11 @@ span{
     .content-main{
         width: 90%;
     }
-    i{
+    .page-coin{
         color: white;
         font-size: 2rem;
     }
-    span{
+    .page-name{
         color: white;
         font-size: 1rem;
     }
